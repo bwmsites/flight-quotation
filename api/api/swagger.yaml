@@ -1,0 +1,77 @@
+---
+swagger: "2.0"
+info:
+  description: | 
+    Simple API to get flights available.
+    
+    You have the options both get all flights from a given Origin to a given Destiny and Only the cheapest flight
+  version: "1.0.0"
+  title: "Quotation API"
+host: "localhost:8090"
+basePath: "/v1"
+schemes:
+- "http"
+- "https"
+consumes:
+- "application/json"
+- "application/x-www-form-urlencoded"
+- "text/xml"
+produces:
+- "application/json"
+- "multipart/form-data"
+- "text/html"
+paths:
+  /quotation/{origin}/{destiny}:
+    get:
+      description: "Get All flights avaible from origin to destiny regardless the price"
+      tags:
+        - Quotation
+      operationId: "getCheapestFlight"
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "origin"
+        in: "path"
+        description: "Origin Airport"
+        required: true
+        type: "string"
+      - name: "destiny"
+        in: "path"
+        description: "Destiny Airport"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Returns the flight with best price"
+          schema:
+            type: "array"
+            title: "CheapestFlights"
+            items:
+              $ref: "#/definitions/CheapestFlight"
+        400:
+          description: "Failed Request. Check all parameters and try again."
+        500:
+          description: "Internal Server Error"
+      x-swagger-router-controller: "quotationController"
+  
+definitions:
+  Flights:
+    type: object
+    title: "Available Flights"
+    properties:
+      route:
+        type: string
+        example: "GRU > SLC"
+      price:
+        type: integer
+        example: 0
+  CheapestFlight:
+    type: object
+    title: "Flight with the best price"
+    properties:
+      route:
+        type: string
+        example: "GRU > BRC > SLC"
+      price:
+        type: integer
+        example: 0

@@ -1,0 +1,1309 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Bilheteria Digital</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='#'>Central de Desenvolvimento BD</a></li>
+            <li><a href='https://www.bilheteriadigital.com/'>Documentation Powered by Bilheteria Digital</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introdu-o">Introdução</h1>
+
+<blockquote>
+<p>API Endpoint</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http://34.205.79.144/v1/
+</code></pre>
+<blockquote>
+<p>Estrutura padrão de resposta</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="p">[]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Exemplo pdrão de consumo</p>
+
+<p>Buscar registros</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/&lt;endpoint&gt;/&lt;token&gt; <span class="se">\</span>
+    -X GET <span class="se">\ </span>
+    -d <span class="s1">'{
+      "nome": "filtro por nome",
+      "id": 4,
+      ...
+    }'</span>
+</code></pre>
+<blockquote>
+<p>Cadastrar registros</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/&lt;endopoint&gt;/&lt;token&gt; <span class="se">\</span>
+    -X POST <span class="se">\ </span>
+    -d <span class="s1">'{ 
+      "nome": "string",
+      ...
+    }'</span>
+</code></pre>
+<blockquote>
+<p>Remover registro</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/&lt;endpoint&gt;/&lt;token&gt; <span class="se">\</span>
+    -X DELETE <span class="se">\ </span>
+    -d <span class="s1">'{
+      "id": "19500",
+      ...
+    }'</span>
+</code></pre>
+<blockquote>
+<p>Atualizar registro</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/&lt;endpoint&gt;/&lt;token&gt; <span class="se">\</span>
+    -X PUT <span class="se">\ </span>
+    -d <span class="s1">'{
+      "id": "19500",
+      "nome": "novo nome",
+      ...
+    }'</span>
+</code></pre>
+<p>=======</p>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>bc6584c565109eee0a576022b1714e6e5591e6be</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+<p><a href="https://www.bilheteriadigital.com/">Bilheteria Digital</a> fornece API REST simples e completa para criação de sistema de gestão de eventos. </p>
+
+<p>Esta documentação fornece informações sobre pontos de extremidades disponíveis do endpoint e como interagir com eles.</p>
+
+<p>Informações importantes:</p>
+
+<ul>
+<li><p>Deve ser enviado no path em todos os serviços (exceto login) o token de autenticação obtido no serviço de login;</p></li>
+<li><p>Qualquer atributo da model a ser retornado pode ser usada como filtro na requisição, caso possua algum filtro diferenciado estará disponível na descrição do serviço;</p></li>
+<li><p>Em cada serviço tem o link para a documentação interativa com a descrição de modelo do serviço;</p></li>
+<li><p>No serviço de POST o id é desconsiderado, pois irá cadastrar os demais campos e então criar um id;</p></li>
+<li><p>Nos serviços de PUT deve ser enviada a model preenchida com os dados corretos para o registro ser atualizado e filtrado pelo id enviado;</p></li>
+<li><p>Todos campos de data são inteiros, no formato timestamp;</p></li>
+<li><p>Todos a requisição e resposta acontece através de documentos json.</p></li>
+</ul>
+
+<h3 id="estrutura-padr-o-para-os-verbos-e-a-es">Estrutura padrão para os verbos e ações</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">GET</code></td>
+<td>Busca registros</td>
+</tr>
+<tr>
+<td><code class="prettyprint">POST</code></td>
+<td>Cadastra registros</td>
+</tr>
+<tr>
+<td><code class="prettyprint">PUT</code></td>
+<td>Atualizar registros</td>
+</tr>
+<tr>
+<td><code class="prettyprint">DELETE</code></td>
+<td>Desabilita\Exclui registros</td>
+</tr>
+</tbody></table>
+
+<h3 id="estrutura-padr-o-para-respostas">Estrutura padrão para respostas</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Valor</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>secesso</td>
+<td>Bolean</td>
+<td>Define se a requisição foi sucesso ou falha, caso seja falha <em>mensagem</em> virá com valor.</td>
+<td></td>
+</tr>
+<tr>
+<td>mensagem</td>
+<td>Array</td>
+<td>Array de strings contendo mensagem de erro</td>
+<td></td>
+</tr>
+<tr>
+<td>dados</td>
+<td>mixed</td>
+<td>Irá conter o valor da resposta. Mudará seu tipo conforme a requição de cada serviço.</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h1 id="autentica-o">Autenticação</h1>
+
+<blockquote>
+<p>Para autorizar use:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X POST
+   --header <span class="s1">'Content-Type: application/x-www-form-urlencoded'</span>
+   --header <span class="s1">'Accept: application/json'</span> 
+   -d <span class="s1">'usuario=dev.nik&amp;senha=bd2016%25'</span> 
+      <span class="s1">'http://34.205.79.144/v1/usuario/login/'</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">""</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19500"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2e9f48cd-0b05-5f7c-9056-17a8acb408ad"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"usuario"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roberto.siq"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"permissoes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eventos.criar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"eventos.alterar_data"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"ativo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Realize o login para obter o objeto do usuário e token para comunicar com os demais serviços.</p>
+
+<p>Cadastre na central de desenvolvimento a esquerda para receber seu usuário e senha inicial para acesso a api.</p>
+
+<p>Em caso de dúvidas entre contato com <a href="mailto:suporte@bilheteriadigital.com">suporte técnico</a>.</p>
+
+<h3 id="resposta">Resposta</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Id único do usuário</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>String contendo token de autenticação na sessão iniciada</td>
+</tr>
+<tr>
+<td>usuario</td>
+<td>String</td>
+<td>Nome de usuário</td>
+</tr>
+<tr>
+<td>permissoes</td>
+<td>Array</td>
+<td>Lista de permissões do usuário</td>
+</tr>
+<tr>
+<td>ativo</td>
+<td>Bolean</td>
+<td>Flag para identificar usuário ativo</td>
+</tr>
+</tbody></table>
+
+<p>Faça login e veja mais detalhes no serviço abaixo:</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Usuario">http://34.205.79.144/docs/#operations-tag-Usuario</a></p>
+
+<h1 id="usu-rio">Usuário</h1>
+
+<blockquote>
+<p>Request Buscar usuários</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/usuario/&lt;token&gt; <span class="se">\</span>
+    -X GET <span class="se">\ </span>
+    -d <span class="s1">'{ 
+      "usuario": "roberto.siq"
+    }'</span>
+</code></pre>
+<blockquote>
+<p>Request Novo Usuário</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/usuario/&lt;token&gt; <span class="se">\</span>
+    -X POST <span class="se">\ </span>
+    -d <span class="s1">'{ 
+      "usuario": "roberto.siq",
+    }'</span>
+</code></pre>
+<blockquote>
+<p>Request DELETE Usuário</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/usuario/&lt;token&gt; <span class="se">\</span>
+    -X DELETE <span class="se">\ </span>
+    -d <span class="s1">'{
+      "id": "19500" 
+    }'</span>
+</code></pre>
+<p><code class="prettyprint">/usuario</code>
+Este endpoint trabalha com os usuários.</p>
+
+<h3 id="model-de-usu-rios">Model de usuários</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Id único do usuário</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>String contendo token de autenticação na sessão iniciada</td>
+</tr>
+<tr>
+<td>usuario</td>
+<td>String</td>
+<td>Nome de usuário</td>
+</tr>
+<tr>
+<td>permissoes</td>
+<td>Array</td>
+<td>Lista de permissões do usuário</td>
+</tr>
+<tr>
+<td>ativo</td>
+<td>Bolean</td>
+<td>Flag para identificar usuário ativo</td>
+</tr>
+</tbody></table>
+
+<p>Para filtros e crud no <a href="#usu-rio">Usuário</a> veja a <a href="#introdu-o">Introdução</a></p>
+
+<p>Veja a descrição detalhada da model e métodos:</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Usuario">http://34.205.79.144/docs/#operations-tag-Usuario</a></p>
+
+<h1 id="territ-rio">Território</h1>
+
+<blockquote>
+<p>Request Buscar cidade</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/territorio/cidade/&lt;token&gt; <span class="se">\</span>
+    -X GET 
+</code></pre>
+<blockquote>
+<p>Request Buscar estado</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/territorio/estado/&lt;token&gt; <span class="se">\</span>
+    -X GET <span class="se">\ </span>
+</code></pre>
+<p><code class="prettyprint">/territorio</code>
+Este endpoint retorna cidades, estados e pais.
+Todos os serviços em /territorios podem ser chamados somente por GET.</p>
+
+<p><code class="prettyprint">/territorio/cidade</code></p>
+
+<h3 id="model-de-cidade">Model de Cidade</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Id único</td>
+</tr>
+<tr>
+<td>nome</td>
+<td>String</td>
+<td>Nome</td>
+</tr>
+<tr>
+<td>estadoId</td>
+<td>Integer</td>
+<td>Id único do estado</td>
+</tr>
+<tr>
+<td>codigoIbge</td>
+<td>String</td>
+<td>Código único da cidade</td>
+</tr>
+</tbody></table>
+
+<p>Veja a descrição detalhada da model e métodos:</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Território">http://34.205.79.144/docs/#operations-tag-Território</a></p>
+
+<p><code class="prettyprint">/territorio/estado</code></p>
+
+<h3 id="model-de-estado">Model de Estado</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Id único</td>
+</tr>
+<tr>
+<td>nome</td>
+<td>String</td>
+<td>Nome</td>
+</tr>
+<tr>
+<td>paisId</td>
+<td>Integer</td>
+<td>Id único do país</td>
+</tr>
+<tr>
+<td>sigla</td>
+<td>String</td>
+<td>sigla curta</td>
+</tr>
+</tbody></table>
+
+<p>Veja a descrição detalhada da model e métodos:</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Território">http://34.205.79.144/docs/#operations-tag-Território</a></p>
+
+<p><code class="prettyprint">/territorio/pais</code></p>
+
+<h3 id="model-de-pa-s">Model de País</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Id único</td>
+</tr>
+<tr>
+<td>nome</td>
+<td>String</td>
+<td>Nome</td>
+</tr>
+<tr>
+<td>siglaISO1</td>
+<td>String</td>
+<td>Sigla curta, padrão ISO_3166-1</td>
+</tr>
+<tr>
+<td>siglaISO2</td>
+<td>String</td>
+<td>Sigla curta, padrão ISO_3166-2</td>
+</tr>
+<tr>
+<td>siglaTLD</td>
+<td>String</td>
+<td>Sigla curta, padrão ISO_3166-2 em caixa baixa</td>
+</tr>
+</tbody></table>
+
+<h1 id="proposta">Proposta</h1>
+
+<p>Endpoint <code class="prettyprint">proposta</code>. </p>
+
+<p>Para filtros e crud em <a href="#proposta">Proposta</a> veja a <a href="#introdu-o">Introdução</a></p>
+
+<p>A Proposta comercial dá inicio ao cadastro de eventos.</p>
+
+<p>Ao cadastrar uma proposta deve ser carregado todas as opções do endpoint ´proposta/tarifas´ e ´proposta/servico´ para permitir ao usuário editar seus valores.</p>
+
+<p>Se o usuário comercial preencher algum dos valores abaixo do valor padrão a proposta irá automaticamente para <strong>Aguardando Gerente</strong> até que um gerente aprove.</p>
+
+<p>Gerente é um usuario cuja seu id esteja presente no endpoin <code class="prettyprint">proposta/gerente</code> </p>
+
+<p>O comercial cria a proposta que fica com o status <strong>Nova Proposta</strong> até ele decidir enviar para o produtor. </p>
+
+<p>Se o sistema verificar as taxas oferecidas são muito baixas a proposta é enviada para o gerente comercial com o status <strong>Aguardando Gerente</strong> que pode cancelar (<strong>Cancelada</strong>), pode aprovar e vai diretamente para o produtor (<strong>Avaliando</strong>) ou recusar e pedir nova análise pelo comercial (<strong>Recusada pelo Gerente</strong>).</p>
+
+<p>Se o sistema verificar que as taxas estão ok vai direto para o Produtor (<strong>Avaliando</strong>)</p>
+
+<p>Uma vez com o produtor (<strong>Avaliando</strong>) ele por pedir uma nova proposta (<strong>Recusada</strong>), cancelar de vez a negociação (<strong>Cancelada</strong>) ou aceitar os valores (<strong>Confirmada</strong>).</p>
+
+<p>Os status <strong>Recusada</strong> e <strong>Recusada pelo Gerente</strong> ficam disponíveis para o comercial reeditar essa proposta (<strong>Renegociando</strong>) até querer reenviar para o sistema entrar novamente no ciclo.</p>
+
+<p>O status <strong>Confirmada</strong> envia uma solicitação para DocYouSign para o produtor informar uma assinatura digital. Essa assinatura causa um notificação do site da DocYouSign de volta para a Bilheteria que gera automaticamente o Evento. 
+O evento gerado ainda poderá ser editado pelo comercial que colocará todas as informações básicas como setores, ingressos, moedas e datas. 
+Se o evento for marcado para ser configurado pela equipe técnica da BD eles receberão uma notificação no sistema, caso o contrário o Produtor receberá um e-mail que o seu evento esta disponível para configuração.</p>
+
+<p>Veja a descrição detalhada da model e métodos:</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Território">http://34.205.79.144/docs/#operations-tag-Território</a></p>
+
+<h1 id="local">Local</h1>
+
+<blockquote>
+<p>Request Buscar Local</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/local/&lt;token&gt; <span class="se">\</span>
+    -X GET <span class="se">\ </span>
+</code></pre>
+<blockquote>
+<p>Request Novo Local</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/local/&lt;token&gt; <span class="se">\</span>
+    -X POST <span class="se">\ </span>
+    -d <span class="s1">'{ 
+      "nome": "string",
+      "endereco": "string",
+      "latitute": "string",
+      "longitude": "string",
+      "uf": "string"
+    }'</span>
+</code></pre>
+<blockquote>
+<p>Request DELETE Usuário</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/local/&lt;token&gt; <span class="se">\</span>
+    -X DELETE <span class="se">\ </span>
+    -d <span class="s1">'{
+      "id": "19500" 
+    }'</span>
+</code></pre>
+<p><code class="prettyprint">/local</code>
+Este endpoint trabalha com os locais.</p>
+
+<h3 id="model-de-local">Model de local</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Id único do usuário</td>
+</tr>
+<tr>
+<td>nome</td>
+<td>String</td>
+<td>Nome para o local</td>
+</tr>
+<tr>
+<td>endereco</td>
+<td>String</td>
+<td>Endereço completo</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p>Para filtros e crud no <a href="#local">Local</a> veja a <a href="#introdu-o">Introdução</a></p>
+
+<p>Veja a descrição detalhada da model e métodos:</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Local">http://34.205.79.144/docs/#operations-tag-Local</a></p>
+
+<blockquote>
+<p>Request Buscar proposta</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://34.205.79.144/v1/proposta/&lt;token&gt; <span class="se">\</span>
+    -X GET <span class="se">\ </span>
+</code></pre>
+<h1 id="proposta">Proposta</h1>
+
+<p>Endpoint <code class="prettyprint">proposta</code>. </p>
+
+<p>Para filtros e crud em <a href="#proposta">Proposta</a> veja a <a href="#introdu-o">Introdução</a></p>
+
+<h3 id="model-de-proposta">Model de Proposta</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id único da proposta</td>
+</tr>
+<tr>
+<td>produtorpropostaid</td>
+<td>integer</td>
+<td>Id único do produtor</td>
+</tr>
+<tr>
+<td>usuarioproprietarioid</td>
+<td>integer</td>
+<td>Id do usuário proprietário</td>
+</tr>
+<tr>
+<td>usuarioautorizaid</td>
+<td>integer</td>
+<td>Id do usuário que autorizou a proposta</td>
+</tr>
+<tr>
+<td>localid</td>
+<td>integer</td>
+<td>Id único do local</td>
+</tr>
+<tr>
+<td>dataevento</td>
+<td>integer</td>
+<td>timestamp da data do evento</td>
+</tr>
+<tr>
+<td>nomeevento</td>
+<td>string</td>
+<td>Nome o evento</td>
+</tr>
+<tr>
+<td>descricao</td>
+<td>string</td>
+<td>Descrição extra</td>
+</tr>
+<tr>
+<td>papelepson</td>
+<td>integer</td>
+<td>Flag Usar Papel Epson</td>
+</tr>
+<tr>
+<td>papelzebra</td>
+<td>integer</td>
+<td>Flag Usar Papel Zebra</td>
+</tr>
+<tr>
+<td>tarifas</td>
+<td>array</td>
+<td>Array de tarifas</td>
+</tr>
+<tr>
+<td>servicos</td>
+<td>array</td>
+<td>Array de serviços</td>
+</tr>
+<tr>
+<td>pdvs</td>
+<td>array</td>
+<td>array de pdv</td>
+</tr>
+<tr>
+<td>situacao</td>
+<td>string</td>
+<td>Enumerador com as opções [&lsquo;NOV&rsquo;,&lsquo;AVA&rsquo;,&lsquo;DIR&rsquo;,&lsquo;REN&rsquo;,&lsquo;REC&rsquo;,&lsquo;APR&rsquo;,&lsquo;CAN&rsquo;,&lsquo;CON&rsquo;,&lsquo;RDI&rsquo;,&lsquo;ACE&rsquo;,&lsquo;COM&rsquo;,&lsquo;SUP&rsquo;]</td>
+</tr>
+<tr>
+<td>dataliberacao</td>
+<td>integer</td>
+<td>timestamp da data de liberação</td>
+</tr>
+<tr>
+<td>datacriacao</td>
+<td>integer</td>
+<td>timestamp da data de criação</td>
+</tr>
+<tr>
+<td>dataenvio</td>
+<td>integer</td>
+<td>timestamp da data de envio</td>
+</tr>
+</tbody></table>
+
+<h3 id="model-de-tarifas">Model de tarifas</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>codigo</td>
+<td>&ldquo;string&rdquo;</td>
+<td>Código interno</td>
+</tr>
+<tr>
+<td>label</td>
+<td>&ldquo;string&rdquo;</td>
+<td>Descrição</td>
+</tr>
+<tr>
+<td>valor</td>
+<td>integer</td>
+<td>Valor aplicado</td>
+</tr>
+</tbody></table>
+
+<h3 id="model-de-servi-os">Model de serviços</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>codigo</td>
+<td>integer</td>
+<td>Código interno</td>
+</tr>
+<tr>
+<td>label</td>
+<td>&ldquo;string&rdquo;</td>
+<td>Descrição</td>
+</tr>
+<tr>
+<td>valor</td>
+<td>integer</td>
+<td>Valor aplicado</td>
+</tr>
+<tr>
+<td>qtd</td>
+<td>integer</td>
+<td>Quantidade</td>
+</tr>
+</tbody></table>
+
+<p>Veja a descrição detalhada das models e métodos:</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Proposta">http://34.205.79.144/docs/#operations-tag-Proposta</a></p>
+
+<h1 id="pdv">PDV</h1>
+
+<p>Endpoint <code class="prettyprint">proposta</code>. </p>
+
+<p>Para filtros e crud em <a href="#PDV">PDV</a> veja a <a href="#introdu-o">Introdução</a></p>
+
+<h3 id="model-de-pdv">Model de pdv</h3>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id de PDV</td>
+</tr>
+<tr>
+<td>local</td>
+<td>&ldquo;string&rdquo;</td>
+<td></td>
+</tr>
+<tr>
+<td>nome</td>
+<td>&ldquo;string&rdquo;</td>
+<td></td>
+</tr>
+<tr>
+<td>responsavel</td>
+<td>&ldquo;string&rdquo;</td>
+<td></td>
+</tr>
+<tr>
+<td>telefone</td>
+<td>&ldquo;string&rdquo;</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-PDV">http://34.205.79.144/docs/#operations-tag-PDV</a></p>
+
+<h1 id="estilos">Estilos</h1>
+
+<p>Endpoint <code class="prettyprint">estilo</code>. </p>
+
+<p>Para filtros e crud em <a href="#estilos">Estilo</a> veja a <a href="#introdu-o">Introdução</a>.</p>
+
+<p>Estilo é o que categoriza os eventos para o usuário final e para o disparo de mailing, ele existe por si, e não relaciona com outras entidades. </p>
+
+<p>Apenas outras entidades relacionam com ele.</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Estilo">http://34.205.79.144/docs/#operations-tag-Estilo</a></p>
+
+<h1 id="locais">Locais</h1>
+
+<p>Endpoint <code class="prettyprint">local</code>. </p>
+
+<p>Para filtros e crud em <a href="#locais">Local</a> veja a <a href="#introdu-o">Introdução</a>.</p>
+
+<p>O local é a lugar onde o evento pode ser realizado, ele existe por si, e não relaciona com outras entidades. </p>
+
+<p>Apenas outras entidades relacionam com ele.</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Local">http://34.205.79.144/docs/#operations-tag-Local</a></p>
+
+<h1 id="pdv">PDV</h1>
+
+<p>Endpoint <code class="prettyprint">pdv</code>. </p>
+
+<p>PDV dispõe somente do serviço de <strong>GET</strong>.</p>
+
+<p>Todo PDV pertence a uma praça.</p>
+
+<p>o PDV é a identidade dos Pontos de Venda por todo o território. </p>
+
+<p>Um PDV sempre estará vinculado a uma praça, ele não pode existir por si apenas.</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-PDV">http://34.205.79.144/docs/#operations-tag-PDV</a></p>
+
+<h1 id="pra-as">Praças</h1>
+
+<p>Endpoint <code class="prettyprint">praca</code>. </p>
+
+<p>Para filtros e crud em <a href="#pra_as">Praça</a> veja a <a href="#introdu-o">Introdução</a>.</p>
+
+<p>A praça é a identidade dos representantes da Bilheteria Digital por todo o território do país. </p>
+
+<p>Uma praça sempre estará vinculada a uma empresa, ela não pode existir por si apenas.</p>
+
+<p>Além do nome existe o percentual de faturamento dessa praça, esse <strong>percentual</strong> identifica sua participação do faturamento nos eventos.</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Praca">http://34.205.79.144/docs/#operations-tag-Praca</a></p>
+
+<h1 id="eventos">Eventos</h1>
+
+<p>Endpoint <code class="prettyprint">evento</code>. </p>
+
+<p>Para filtros e crud em <a href="#estilo">Eventos</a> veja a <a href="#introdu-o">Introdução</a>.</p>
+
+<p>Nome do evento não pode ser vazio</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Evento">http://34.205.79.144/docs/#operations-tag-Evento</a></p>
+
+<h1 id="ingressos">Ingressos</h1>
+
+<p>Endpoint <code class="prettyprint">ingresso</code>. </p>
+
+<p>Para filtros e crud em <a href="#ingresso">Ingressos</a> veja a <a href="#introdu-o">Introdução</a>.</p>
+
+<p>Nome do evento não pode ser vazio</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-tag-Ingresso">http://34.205.79.144/docs/#operations-tag-Ingresso</a></p>
+
+<h1 id="arquivos">Arquivos</h1>
+
+<p>Para filtros e crud em <a href="#arquivos">Arquivos</a> veja a <a href="#introdu-o">Introdução</a>.</p>
+
+<p>O serviço de arquivos faz o upload de arquivos para o S3 da aws e retorna a url final.</p>
+
+<p>Para facilitar a busca é disponibilizado o campo de metadados, onde armazena algumas informções da imagem.</p>
+
+<p>Envie no atributo <strong>referencia</strong> uma informação que irá identificar o arquivo posteriormente, <strong>categoria</strong> a qual módulo pertence e em <strong>tags</strong> a informação que irá definir o que é imagem na referência. </p>
+
+<p>Por exemplo:</p>
+
+<ul>
+<li><p><strong>referencia</strong>=1234, <strong>categoria</strong>=evento, <strong>tag</strong>=web                        </p></li>
+<li><p><strong>referencia</strong>=1234, <strong>categoria</strong>=evento, <strong>tag</strong>=web1                        </p></li>
+<li><p><strong>referencia</strong>=1234, <strong>categoria</strong>=banner, <strong>tag</strong>=topo</p></li>
+<li><p><strong>referencia</strong>=2728, <strong>categoria</strong>=banner, <strong>tag</strong>=topo</p></li>
+</ul>
+
+<p>Veja a descrição detalhada das models e métodos:</p>
+
+<h1 id="relat-rios">Relatórios</h1>
+
+<p>Os serviços de relatórios são somente leitura, eles servem os dados para listar os relatórios disponíveis, bem como os filtros e resultados.</p>
+
+<h2 id="listagem-de-relat-rios">Listagem de Relatórios</h2>
+
+<p>Para obter a lista de relatórios consulte o serviço com GET no endpoint <code class="prettyprint">relatorio</code>.</p>
+
+<p>Irá retornar um array com os seguintes dados:</p>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Código interno</td>
+</tr>
+<tr>
+<td>relCapaId</td>
+<td>integer</td>
+<td>Campo que identifica um relatório pai.</td>
+</tr>
+<tr>
+<td>chave</td>
+<td>string</td>
+<td>Chave para identificar um relatório específico</td>
+</tr>
+<tr>
+<td>nome</td>
+<td>string</td>
+<td>Nome do relatório</td>
+</tr>
+</tbody></table>
+
+<p>O campo <em>relCapaId</em> será utilizado para referenciar o id de um relatório pai para o relatório, para poder montar uma árvore de relatórios.</p>
+
+<p>Caso seja necessário buscar um relatório especifico em determinada parte do sistema pode ser utilizado o campo <em>chave</em>, fixando então um relatório sem precisar percorrer a lista.</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-Relatorio-relatorioDetalheGET">http://34.205.79.144/docs/#operations-Relatorio-relatorioDetalheGET</a></p>
+
+<h2 id="detalhes-do-relat-rio">Detalhes do Relatório</h2>
+
+<p>Quando um relatório especifico for requisitado é necessário consumir o serviço com GET no endpoint <code class="prettyprint">relatorio\detalhe</code> para obter os detalhes do relatório e filtros a serem apliados.</p>
+
+<blockquote>
+<p>Formato do filtro reservado:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name do filtro pré estabelecido"</span><span class="p">,</span><span class="w"> </span><span class="err">//valor</span><span class="w"> </span><span class="err">retornado</span><span class="w"> </span><span class="err">no</span><span class="w"> </span><span class="err">serviço</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">detalhes</span><span class="w">
+    </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="err">mixed</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">valor</span><span class="w"> </span><span class="err">para</span><span class="w"> </span><span class="err">aplicar</span><span class="w"> </span><span class="err">no</span><span class="w"> </span><span class="err">filtro.</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Na requisição é possível informar <em>filtros reservados</em> que irão restringir os dados a serem exibidos nos filtros com valores pré estabelecidos.</p>
+
+<p>Filtros Reservados:</p>
+
+<table><thead>
+<tr>
+<th>Filtro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>EVENTO_ID</td>
+<td>Identificador de um evento</td>
+</tr>
+</tbody></table>
+
+<p>Será retornado o array de filtros com os seguintes dados:</p>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Código interno</td>
+</tr>
+<tr>
+<td>relCapaId</td>
+<td>integer</td>
+<td>Campo que identifica o relatório a qual o filtro pertence</td>
+</tr>
+<tr>
+<td>tipo</td>
+<td>string</td>
+<td>Tipo de filtro que será aplicado</td>
+</tr>
+<tr>
+<td>valores</td>
+<td>string</td>
+<td>Valores pré definidos o filtro</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Formato de valores:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w"> 
+  </span><span class="p">[</span><span class="err">value</span><span class="p">,</span><span class="w"> </span><span class="err">label</span><span class="p">],</span><span class="w"> 
+  </span><span class="p">[</span><span class="err">value</span><span class="p">,</span><span class="w"> </span><span class="err">label</span><span class="p">],</span><span class="w"> 
+  </span><span class="err">...</span><span class="w"> 
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>O <strong>tipo</strong> de filtro pode ser:</p>
+
+<ul>
+<li><p><strong>Data</strong>: dois inputs text para filtro de datas;</p></li>
+<li><p><strong>Select</strong>: filtro do tipo &lt;select&gt; observando os dados do campo valore;</p></li>
+<li><p><strong>Valores</strong>: Os valores virão no formato ao lado;</p></li>
+<li><p><strong>Text</strong>: filtro com input text;</p></li>
+<li><p><strong>Number</strong>: filtro com input text validando somente numeros ou input number.</p></li>
+</ul>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-Relatorio-relatorioDetalheGET">operations-Relatorio-relatorioDetalheGET</a></p>
+
+<h2 id="resultado-do-relat-rio">Resultado do Relatório</h2>
+
+<blockquote>
+<p>Formato do filtro:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name do filtro"</span><span class="p">,</span><span class="w"> </span><span class="err">//valor</span><span class="w"> </span><span class="err">retornado</span><span class="w"> </span><span class="err">no</span><span class="w"> </span><span class="err">serviço</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">detalhes</span><span class="w">
+    </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"valor"</span><span class="p">],</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">valor</span><span class="w"> </span><span class="err">para</span><span class="w"> </span><span class="err">aplicar</span><span class="w"> </span><span class="err">no</span><span class="w"> </span><span class="err">filtro</span><span class="p">,</span><span class="w"> </span><span class="err">quando</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">mandar</span><span class="w"> </span><span class="err">duas</span><span class="w"> </span><span class="err">posições.</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Para obter mais o resultado do relatório é necessário consumir com GET o endpoint <code class="prettyprint">relatorio/resultado</code>.</p>
+
+<p>Envie o filtro id correspondente a qual relatório está buscando e os filtros correspondentes ao reltório.</p>
+
+<blockquote>
+<p>Formato do agrupamento:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"label do agrupamento"</span><span class="p">,</span><span class="w"> </span><span class="err">//valor</span><span class="w"> </span><span class="err">retornado</span><span class="w"> </span><span class="err">no</span><span class="w"> </span><span class="err">serviço</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">detalhes</span><span class="w">
+    </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valor"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">nome</span><span class="w"> </span><span class="err">do</span><span class="w"> </span><span class="err">agrupamento</span><span class="w"> </span><span class="err">que</span><span class="w"> </span><span class="err">será</span><span class="w"> </span><span class="err">aplicado.</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span></code></pre>
+<p>Envie o agrupamento.value  correspondente para agrupar os dados por alguma informação disponível.</p>
+
+<p><a target="_blank" href="http://34.205.79.144/docs/#operations-Relatorio-relatorioResultadoGET">http://34.205.79.144/docs/#operations-Relatorio-relatorioResultadoGET</a></p>
+
+          <h1 id="errors">Errors</h1>
+
+<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&lsquo;s frontmatter. Files are included in the order listed.</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Your request sucks</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Your API key is wrong</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The specified kitten could not be found</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone &ndash; The kitten requested has been removed from our servers</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&rsquo;m a teapot</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>502</td>
+<td>Bad Gateway &ndash; Serviço caiu.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
