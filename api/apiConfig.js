@@ -34,7 +34,7 @@ swaggerTools.initializeMiddleware(apiSwaggerDocs, middleware => {
 
     // Route validated requests to appropriate controller
     app.use((req, res, next) => {
-        let router = middleware.swaggerRouter(apiOptions)
+        const router = middleware.swaggerRouter(apiOptions)
         router(req, res, next)
     })
 

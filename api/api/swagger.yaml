@@ -48,6 +48,8 @@ paths:
             title: "CheapestFlights"
             items:
               $ref: "#/definitions/CheapestFlight"
+        204:
+          description: "No data found"
         400:
           description: "Failed Request. Check all parameters and try again."
         500:

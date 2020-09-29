@@ -24,7 +24,7 @@ exports.getAllFlights = (origin, destiny) => {
 
 exports.getCheapestFlight = (req, res, next) => {
     const args  = req.swagger.params
-    console.log(args.origin.value)
+    //console.log(args.origin.value)
 
     let origin  = args.origin.value
     let destiny = args.destiny.value 
@@ -36,7 +36,7 @@ exports.getCheapestFlight = (req, res, next) => {
 
     flights = avaliableFlights.filter(flight => flight.price === bestPrice) // Returns the cheapest flight
 
-    console.log(avaliableFlights)
+    //console.log(avaliableFlights)
 
     resp = {
         data: flights,
@@ -44,7 +44,7 @@ exports.getCheapestFlight = (req, res, next) => {
         success: true
     }
 
-    let response = JSON.stringify(resp)
+    const response = JSON.stringify(resp)
     res.setHeader('Content-Type', 'application/json; charset=utf-8')
     res.end(response)
 }

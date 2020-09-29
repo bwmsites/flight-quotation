@@ -1,4 +1,6 @@
-const getCheapestFlight = (origin, destiny) => {
+// Nothig to see right here :)
+
+/*const getCheapestFlight = (origin, destiny) => {
     const avaliableFlights = this.getAllFlights(origin, destiny)
 
     const Prices = []
@@ -6,3 +8,4 @@ const getCheapestFlight = (origin, destiny) => {
     bestPrice = Math.min(...Prices) //Gets the best price available
 
     return avaliableFlights.filter(flight => flight.price === bestPrice) // Returns the cheapest flight
+*/
